@@ -1,0 +1,5 @@
+tensorflow
+numpy
+portpicker
+fastapi
+uvicorn
