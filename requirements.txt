@@ -3,3 +3,5 @@ numpy
 portpicker
 fastapi
 uvicorn
+grpcio
+grpcio-tools

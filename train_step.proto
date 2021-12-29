@@ -1,0 +1,13 @@
+service Train {
+    rpc TrainStep (TrainRequest) returns (TrainOutput) {}
+  }
+  
+  // The request message containing the user's name.
+  message TrainRequest {
+    string name = 1;
+  }
+  
+  // The response message containing the greetings
+  message TrainOutput {
+    string message = 1;
+  }

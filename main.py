@@ -63,9 +63,9 @@ with strategy.scope():
         print("\nStart of epoch %d" % (epoch,))
         # Iterate over the batches of the dataset.
         for step, (x_batch_train, y_batch_train) in enumerate(multi_worker_dataset):
+            print(tf.io.serialize_tensor(x_batch_train).numpy)
             with tf.GradientTape() as tape:
-                print(x_batch_train)
-                y_pred = requests.post("localhost:8000", data=x_batch_train)
+                y_pred = requests.post("http://127.0.0.1:8000", data=tf.io.serialize_tensor(x_batch_train).numpy)
 
 print("fit model")
 print(multi_worker_dataset)
